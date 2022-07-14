@@ -1,0 +1,12 @@
+library(tidyverse)
+library(readxl)
+
+DFW_Weather_1899_2021 <- read_excel("DFW-Weather 1899-2021.xlsx", 
+                                    range = "A1:N125")
+View(DFW_Weather_1899_2021)
+
+library(ggplot2)
+library(gcookbook)
+
+plot(DFW_Weather_1899_2021$Year,DFW_Weather_1899_2021$Total,type = "l",col = "Red",xlab="Year",
+     ylab="DFW Weather Averages")
